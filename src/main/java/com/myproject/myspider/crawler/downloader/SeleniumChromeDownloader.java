@@ -34,7 +34,7 @@ public class SeleniumChromeDownloader implements Downloader, Closeable {
     }
 
     public SeleniumChromeDownloader() {
-        String chromeDriverPath = "G:\\IDEAProject\\myspider\\chromedriver.exe";
+        String chromeDriverPath = "E:\\chromedriver.exe";
         System.getProperties().setProperty("webdriver.chrome.driver", chromeDriverPath);
         log.info("SeleniumChromeDownloader Completed");
     }

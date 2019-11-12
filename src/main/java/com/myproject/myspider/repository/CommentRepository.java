@@ -6,4 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface CommentRepository extends MongoRepository<Comment, String> {
 
     long countByProductId(String productId);
+    Comment findCommentByProductId(String productId);
 }

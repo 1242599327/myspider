@@ -31,7 +31,9 @@ public class MyspiderApplication implements CommandLineRunner {
 
     public void run(String... strings) throws Exception {
         Spider spider = Spider.create(commentPageProcessor);
-        spider.addUrl("https://list.jd.com/list.html?cat=672&page=1")
+        //spider.addUrl("https://club.jd.com/review/100003688077-0-1-3.html")
+        spider.addUrl("https://item.jd.com/100003688077.html")
+        //spider.addUrl("https://list.jd.com/list.html?cat=672&page=1")
                 .setDownloader(new SeleniumChromeDownloader())
                 .addPipeline(commentMongodbPipeline)
                 .thread(5);

@@ -1,28 +1,60 @@
 package com.myproject.myspider.model;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-import org.springframework.data.annotation.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "comments")
 public class Comment implements Serializable {
     @Id
-    private String id;
+    @Getter
+    @Setter
     private String productId;
+    @Getter
+    @Setter
+    private String price;
+    @Getter
+    @Setter
     private String date;
+    @Getter
+    @Setter
     private String rate;
+    @Getter
+    @Setter
     private String productName;
-    private List<Map<String, Integer>> focus;
+    @Getter
+    @Setter
+    private String focus;
+    @Getter
+    @Setter
+    private String config;
+    @Getter
+    @Setter
+    private String goodReview;
+    @Getter
+    @Setter
+    private String mediaReview;
+    @Getter
+    @Setter
+    private String badReview;
+    @Getter
+    @Setter
+    private String greatReview;
 
-    public Comment(String productId, String date, String rate, String productName, List<Map<String, Integer>> focus) {
+    public Comment(String productId, String price, String date, String rate, String productName, String focus, String config, String goodReview, String mediaReview, String badReview, String greatReview) {
         this.productId = productId;
+        this.price = price;
         this.date = date;
         this.rate = rate;
         this.productName = productName;
         this.focus = focus;
-    }
-
-    public String toString() {
-        return "Comment{id='" + this.id + '\'' + ", productId='" + this.productId + '\'' + ", date='" + this.date + '\'' + ", rate='" + this.rate + '\'' + ", productName='" + this.productName + '\'' + ", focus=" + this.focus + '}';
+        this.config = config;
+        this.goodReview = goodReview;
+        this.mediaReview = mediaReview;
+        this.badReview = badReview;
+        this.greatReview = greatReview;
     }
 }

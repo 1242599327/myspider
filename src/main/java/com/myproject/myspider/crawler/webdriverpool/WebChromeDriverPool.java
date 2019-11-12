@@ -45,7 +45,8 @@ public class WebChromeDriverPool {
         sCaps.setCapability("takesScreenshot", false);
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("no-sandbox");
+        //options.addArguments("user-data-dir='G:\\IDEAProject\\myspider\\ChromeUserData'");
+        options.addArguments("process-per-site");
         options.setHeadless(true);
         options.addArguments("blink-settings=imagesEnabled=false");
         sCaps.setCapability(ChromeOptions.CAPABILITY,options);
